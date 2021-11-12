@@ -1,6 +1,6 @@
 # ReactionBot
 
-Just a shitty bot I made
+Just a shitty discord bot I made
 
 Add a token.txt file into the same directory as the cogs.txt file
 
