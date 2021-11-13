@@ -14,14 +14,14 @@ class Reaction(commands.Cog):
         n = random.randint(1,10)
         m = await ctx.send("Downloading Images...")
         try:
-            parameters = args.split(" ")
+            parameters = args.replace(" ", "_")
         except:
             await m.edit(content="An error occured.")
         response = simp.simple_image_download
-        response().download(parameters[0], 10)
-        dir = os.listdir("simple_images/" + parameters[0])
+        response().download(parameters, 10)
+        dir = os.listdir("simple_images/" + parameters)
         try:
-            file = discord.File("simple_images/" + parameters[0] + "/" + dir[n])
+            file = discord.File("simple_images/" + parameters + "/" + dir[n])
         except:
             await m.delete()
             await ctx.send(content="An error occured.")
